@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace CircusTrein.Framework
 {
-    enum GenderEnum
+    public enum Types
     {
-        UNKNOWN,
-        MALE,
-        FEMALE,
+     BEAR,
+     CAT,
+     BIRD,
+     CAMEL,
+     DONKEY,
+     ELEPHANT,
+     HORSE,
+     LlAMA,
+     MONKEY,
+     WOLF,
+     ZEBRA
     }
 }

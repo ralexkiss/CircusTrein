@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace CircusTrein.Framework
 {
-    enum ConsumptionTypeEnum
+    public enum ConsumptionType
     {
-        UNKNOWN,
         HERBIVORE,
         CARNIVORE,
         OMNIVORE
-
     }
 }

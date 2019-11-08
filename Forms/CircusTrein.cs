@@ -30,24 +30,24 @@ namespace CircusTrein
                 createdAnimalsBox.Items.Add(animal.getString());
             }
 
-            foreach (Types type in Types.types)
+            foreach (string type in Enum.GetNames(typeof(Types)))
             {
-                AnimalTypeBox.Items.Add(type.type);
+                AnimalTypeBox.Items.Add(type.ToLower());
             }
 
-            foreach (Gender gender in Gender.genders)
+            foreach (string gender in Enum.GetNames(typeof(Gender)))
             {
-                GenderBox.Items.Add(gender.gender);
+                GenderBox.Items.Add(gender.ToLower());
             }
 
-            foreach (Sizes size in Sizes.sizes)
+            foreach (string size in Enum.GetNames(typeof(Sizes)))
             {
-                SizeBox.Items.Add(size.size);
+                SizeBox.Items.Add(size.ToLower());
             }
 
-            foreach (ConsumptionType consumptionType in ConsumptionType.consumptionTypes)
+            foreach (string consumptionType in Enum.GetNames(typeof(ConsumptionType)))
             {
-                ConsumptionTypeBox.Items.Add(consumptionType.consumptionType);
+                ConsumptionTypeBox.Items.Add(consumptionType.ToLower());
             }
         }
 
@@ -83,7 +83,11 @@ namespace CircusTrein
                 MessageBox.Show("Je hebt nog geen gegevens ingevuld!", "Mislukt!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Animal animal = new Animal(Types.fromValue(AnimalTypeBox.SelectedItem.ToString()), Gender.fromValue(GenderBox.SelectedItem.ToString()), ConsumptionType.fromValue(ConsumptionTypeBox.SelectedItem.ToString()), Sizes.fromValue(SizeBox.SelectedItem.ToString()));
+            Animal animal = new Animal(
+                (Types)Enum.Parse(typeof(Types), AnimalTypeBox.SelectedItem.ToString().ToUpper()), 
+                (Gender)Enum.Parse(typeof(Gender), GenderBox.SelectedItem.ToString().ToUpper()), 
+                (ConsumptionType)Enum.Parse(typeof(ConsumptionType), ConsumptionTypeBox.SelectedItem.ToString().ToUpper()), 
+                (Sizes)Enum.Parse(typeof(Sizes), SizeBox.SelectedItem.ToString().ToUpper()));
             wagonLogic.animals.Add(animal);
             createdAnimalsBox.Items.Add(animal.getString());
             MessageBox.Show("Dier toegevoegd met de volgende attributen: " + animal.getString(), "Succes!", MessageBoxButtons.OK, MessageBoxIcon.Information);

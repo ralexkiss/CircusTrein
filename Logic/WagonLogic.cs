@@ -30,11 +30,11 @@ namespace CircusTrein.Logic
             Animal elephant = new Animal(Types.ELEPHANT, Gender.MALE, ConsumptionType.HERBIVORE, Sizes.MEDIUM);
             animals.Add(elephant);
             Animal femalebear = new Animal(Types.BEAR, Gender.FEMALE, ConsumptionType.OMNIVORE, Sizes.BIG);
-        }
+    }
 
         public void performAddToWagon()
         {
-            animals = animals.OrderBy(animal => animal.getSize().getPoints()).ToList();
+            animals = animals.OrderBy(animal => animal.getSize()).ToList();
             List<Animal> herbivores = animals.Where(animal => animal.getConsumptionType().Equals(ConsumptionType.HERBIVORE)).ToList();
             List<Wagon> wagons = animals.Where(animal => animal.getConsumptionType().Equals(ConsumptionType.CARNIVORE)).Select(animal =>
             {

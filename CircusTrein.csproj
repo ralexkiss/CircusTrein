@@ -53,14 +53,10 @@
       <DependentUpon>CircusTrein.cs</DependentUpon>
     </Compile>
     <Compile Include="Framework\Animal.cs" />
-    <Compile Include="Framework\ConsumptionTypeEnum.cs" />
-    <Compile Include="Framework\ConsumptionType.cs" />
-    <Compile Include="Framework\Gender.cs" />
-    <Compile Include="Framework\GenderEnum.cs" />
-    <Compile Include="Framework\Sizes.cs" />
-    <Compile Include="Framework\SizesEnum.cs" />
-    <Compile Include="Framework\Types.cs" />
-    <Compile Include="Framework\TypesEnum.cs" />
+    <Compile Include="Framework\Enums\ConsumptionType.cs" />
+    <Compile Include="Framework\Enums\Gender.cs" />
+    <Compile Include="Framework\Enums\Sizes.cs" />
+    <Compile Include="Framework\Enums\Types.cs" />
     <Compile Include="Framework\Wagon.cs" />
     <Compile Include="Interfaces\IWagonLogic.cs" />
     <Compile Include="Logic\WagonLogic.cs" />

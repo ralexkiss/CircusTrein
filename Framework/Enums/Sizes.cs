@@ -6,19 +6,10 @@ using System.Threading.Tasks;
 
 namespace CircusTrein.Framework
 {
-    enum TypesEnum
+    public enum Sizes
     {
-     UNKNOWN,
-     BEAR,
-     CAT,
-     BIRD,
-     CAMEL,
-     DONKEY,
-     ELEPHANT,
-     HORSE,
-     LlAMA,
-     MONKEY,
-     WOLF,
-     ZEBRA
+        SMALL,
+        MEDIUM,
+        BIG
     }
 }

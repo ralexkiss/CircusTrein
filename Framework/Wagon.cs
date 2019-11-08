@@ -10,12 +10,12 @@ namespace CircusTrein.Framework
     {
         public List<Animal> filledAnimals = new List<Animal>();
         private String id;
-        private int points;
+        private int maxWeight;
 
-        public Wagon(int points = 10)
+        public Wagon(int weight = 10)
         {
             this.id = Guid.NewGuid().ToString();
-            this.points = points;
+            this.maxWeight = weight;
         }
 
         public String getString()
@@ -31,19 +31,19 @@ namespace CircusTrein.Framework
 
         public bool canAnimalBeAdded(Animal newAnimal)
         {
-            if (filledAnimals.Sum(animal => animal.getSize().getPoints()) + newAnimal.getSize().getPoints() > points)
+            if (filledAnimals.Sum(animal => animal.getSize()) + newAnimal.getSize() > maxWeight)
             {
                 return false;
             }
 
-            if (filledAnimals.Any(animal => animal.getConsumptionType().id is 2))
+            if (filledAnimals.Any(animal => animal.getConsumptionType() is ConsumptionType.CARNIVORE))
             {
-                return !(newAnimal.getConsumptionType().id is 2 || newAnimal.getSize().getPoints() <= filledAnimals.First(animal => animal.getConsumptionType().id is 2).getSize().getPoints());
+                return !(newAnimal.getConsumptionType() is ConsumptionType.CARNIVORE || newAnimal.getSize() <= filledAnimals.First(animal => animal.getConsumptionType() is ConsumptionType.CARNIVORE).getSize());
             }
 
             if (filledAnimals.Count > 0)
             {
-                return !(newAnimal.getConsumptionType().id is 2 && newAnimal.getSize().getPoints() > filledAnimals.Min(animal => animal.getSize().getPoints()));
+                return !(newAnimal.getConsumptionType() is ConsumptionType.CARNIVORE && newAnimal.getSize() > filledAnimals.Min(animal => animal.getSize()));
             }
 
             return true;

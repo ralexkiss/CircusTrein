@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace CircusTrein.Framework
 {
-    enum SizesEnum
+    public enum Gender
     {
-        UNKNOWN,
-        SMALL,
-        MEDIUM,
-        BIG
+        MALE,
+        FEMALE,
     }
 }
