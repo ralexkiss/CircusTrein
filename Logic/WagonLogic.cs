@@ -32,6 +32,16 @@ namespace CircusTrein.Logic
             Animal femalebear = new Animal(Types.BEAR, Gender.FEMALE, ConsumptionType.OMNIVORE, Sizes.BIG);
     }
 
+        public void addCarnivoresToWagon()
+        {
+
+        }
+
+        public void addHerbivoresToWagon()
+        {
+
+        }
+
         public void performAddToWagon()
         {
             animals = animals.OrderBy(animal => animal.getSize()).ToList();

@@ -92,5 +92,15 @@ namespace CircusTrein
             createdAnimalsBox.Items.Add(animal.getString());
             MessageBox.Show("Dier toegevoegd met de volgende attributen: " + animal.getString(), "Succes!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void filledAnimalsBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                Wagon foundWagon = wagonLogic.madeWagons.Single(wagon => wagon.getString() == filledAnimalsBox.Text);
+                string message = "";
+                foreach (Animal animal in foundWagon.filledAnimals)
+                    message += animal.getString() + "\n";
+
+                MessageBox.Show("Animals: " + message, "Wagon: " + foundWagon.getString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

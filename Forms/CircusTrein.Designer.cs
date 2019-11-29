@@ -60,6 +60,7 @@
             this.filledAnimalsBox.Name = "filledAnimalsBox";
             this.filledAnimalsBox.Size = new System.Drawing.Size(487, 329);
             this.filledAnimalsBox.TabIndex = 2;
+            this.filledAnimalsBox.SelectedIndexChanged += new System.EventHandler(this.filledAnimalsBox_SelectedIndexChanged);
             // 
             // AnimalTypeBox
             // 

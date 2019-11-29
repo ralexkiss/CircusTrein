@@ -9,8 +9,8 @@ namespace CircusTrein.Framework
     public class Wagon
     {
         public List<Animal> filledAnimals = new List<Animal>();
-        private String id;
-        private int maxWeight;
+        private readonly String id;
+        private readonly int maxWeight;
 
         public Wagon(int weight = 10)
         {
@@ -20,7 +20,7 @@ namespace CircusTrein.Framework
 
         public String getString()
         {
-            return "Wagon: " + id;
+            return id;
         }
 
         public void addAnimal(Animal animal)

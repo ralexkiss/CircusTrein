@@ -55,7 +55,7 @@ namespace CircusTrein.Framework
                return "Type: " + getType().ToString().ToLower() +
                             ", Gender: " + getGender().ToString().ToLower() +
                             ", ConsumptionType: " + getConsumptionType().ToString().ToLower() +
-                            ", Size: " + getSize().ToString().ToLower();
+                            ", Size: " + size.ToString().ToLower();
         }
 
         public static int SizeComparator(Animal animal1, Animal animal2)
